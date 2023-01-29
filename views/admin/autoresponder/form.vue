@@ -24,12 +24,18 @@ export default {
     data () {
         return {
             id: null,
-            path_param: ["isp", "subscriber"],
+            path_param: ["smsmass", "autoresponder"],
             model: {
                 id: "",
-                username: "",
-                password: "",
-                partner_id: "",
+                subject: "",
+                body: "",
+                wait_period: "",
+                table_name: "",
+                email_field: "",
+                date_field: "",
+                start_date: "",
+                end_date: "",
+                published: "",
             },
 
         };
