@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Massmail\Entities;
+namespace Modules\Smsmass\Entities;
 
 use Modules\Base\Entities\BaseModel;
 use Illuminate\Database\Schema\Blueprint;
@@ -10,7 +10,7 @@ class Contact extends BaseModel
 
     protected $fillable = ['name'];
     public $migrationDependancy = [];
-    protected $table = "massmail_contact";
+    protected $table = "smsmass_contact";
 
     /**
      * List of fields for managing postings.

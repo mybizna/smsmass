@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Massmail\Entities;
+namespace Modules\Smsmass\Entities;
 
 use Modules\Base\Entities\BaseModel;
 use Illuminate\Database\Schema\Blueprint;
@@ -10,7 +10,7 @@ class Campaign extends BaseModel
 
     protected $fillable = ['name'];
     public $migrationDependancy = [];
-    protected $table = "massmail_campaign";
+    protected $table = "smsmass_campaign";
 
     /**
      * List of fields for managing postings.
