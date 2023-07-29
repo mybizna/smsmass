@@ -1,5 +1,7 @@
 <?php
 
+/** @var \Modules\Base\Classes\Fetch\Menus $this */
+
 $this->add_menu("sms", "smsmass", "Mass Sms", "/smsmass/admin/autoresponder", "fas fa-cogs", 5);
 
 $this->add_submenu("sms", "smsmass", "Autoresponder", "/smsmass/admin/autoresponder", 5);
