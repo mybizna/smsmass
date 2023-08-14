@@ -47,11 +47,11 @@ class Campaign extends BaseModel
         // listing view fields
         $fields = new ListTable();
 
-        $fields->name('subject')->type('text')->ordering(true);
-        $fields->name('body')->type('text')->ordering(true);
-        $fields->name('send_date')->type('date')->ordering(true);
-        $fields->name('is_sent')->type('switch')->ordering(true);
-        $fields->name('published')->type('switch')->ordering(true);
+        $fields->name('subject')->html('text')->ordering(true);
+        $fields->name('body')->html('text')->ordering(true);
+        $fields->name('send_date')->html('date')->ordering(true);
+        $fields->name('is_sent')->html('switch')->ordering(true);
+        $fields->name('published')->html('switch')->ordering(true);
 
         return $fields;
 
@@ -67,11 +67,11 @@ class Campaign extends BaseModel
         // listing view fields
         $fields = new FormBuilder();
 
-        $fields->name('subject')->type('text')->group('w-1/2');
-        $fields->name('body')->type('text')->group('w-1/2');
-        $fields->name('send_date')->type('date')->group('w-1/2');
-        $fields->name('is_sent')->type('switch')->group('w-1/2');
-        $fields->name('published')->type('switch')->group('w-1/2');
+        $fields->name('subject')->html('text')->group('w-1/2');
+        $fields->name('body')->html('text')->group('w-1/2');
+        $fields->name('send_date')->html('date')->group('w-1/2');
+        $fields->name('is_sent')->html('switch')->group('w-1/2');
+        $fields->name('published')->html('switch')->group('w-1/2');
 
         return $fields;
 
@@ -87,11 +87,11 @@ class Campaign extends BaseModel
         // listing view fields
         $fields = new FormBuilder();
 
-        $fields->name('subject')->type('text')->group('w-1/6');
-        $fields->name('body')->type('text')->group('w-1/6');
-        $fields->name('send_date')->type('date')->group('w-1/6');
-        $fields->name('is_sent')->type('switch')->group('w-1/6');
-        $fields->name('published')->type('switch')->group('w-1/6');
+        $fields->name('subject')->html('text')->group('w-1/6');
+        $fields->name('body')->html('text')->group('w-1/6');
+        $fields->name('send_date')->html('date')->group('w-1/6');
+        $fields->name('is_sent')->html('switch')->group('w-1/6');
+        $fields->name('published')->html('switch')->group('w-1/6');
 
         return $fields;
 
@@ -104,11 +104,11 @@ class Campaign extends BaseModel
      */
     public function migration(Blueprint $table): void
     {
-        $table->increments('id');
-        $table->string('subject');
-        $table->string('body');
-        $table->datetime('send_date');
-        $table->tinyInteger('is_sent')->nullable()->default(0);
-        $table->tinyInteger('published')->nullable()->default(1);
+        $this->fields->increments('id');
+        $this->fields->string('subject');
+        $this->fields->string('body');
+        $this->fields->datetime('send_date');
+        $this->fields->tinyInteger('is_sent')->nullable()->default(0);
+        $this->fields->tinyInteger('published')->nullable()->default(1);
     }
 }

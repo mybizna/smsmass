@@ -48,15 +48,15 @@ class Autoresponder extends BaseModel
         // listing view fields
         $fields = new ListTable();
 
-        $fields->name('subject')->type('text')->ordering(true);
-        $fields->name('body')->type('text')->ordering(true);
-        $fields->name('wait_period')->type('text')->ordering(true);
-        $fields->name('table_name')->type('text')->ordering(true);
-        $fields->name('email_field')->type('text')->ordering(true);
-        $fields->name('date_field')->type('text')->ordering(true);
-        $fields->name('start_date')->type('date')->ordering(true);
-        $fields->name('end_date')->type('date')->ordering(true);
-        $fields->name('published')->type('switch')->ordering(true);
+        $fields->name('subject')->html('text')->ordering(true);
+        $fields->name('body')->html('text')->ordering(true);
+        $fields->name('wait_period')->html('text')->ordering(true);
+        $fields->name('table_name')->html('text')->ordering(true);
+        $fields->name('email_field')->html('text')->ordering(true);
+        $fields->name('date_field')->html('text')->ordering(true);
+        $fields->name('start_date')->html('date')->ordering(true);
+        $fields->name('end_date')->html('date')->ordering(true);
+        $fields->name('published')->html('switch')->ordering(true);
 
         return $fields;
 
@@ -72,15 +72,15 @@ class Autoresponder extends BaseModel
         // listing view fields
         $fields = new FormBuilder();
 
-        $fields->name('subject')->type('text')->group('w-1/2');
-        $fields->name('body')->type('text')->group('w-1/2');
-        $fields->name('wait_period')->type('text')->group('w-1/2');
-        $fields->name('table_name')->type('text')->group('w-1/2');
-        $fields->name('email_field')->type('text')->group('w-1/2');
-        $fields->name('date_field')->type('text')->group('w-1/2');
-        $fields->name('start_date')->type('date')->group('w-1/2');
-        $fields->name('end_date')->type('date')->group('w-1/2');
-        $fields->name('published')->type('switch')->group('w-1/2');
+        $fields->name('subject')->html('text')->group('w-1/2');
+        $fields->name('body')->html('text')->group('w-1/2');
+        $fields->name('wait_period')->html('text')->group('w-1/2');
+        $fields->name('table_name')->html('text')->group('w-1/2');
+        $fields->name('email_field')->html('text')->group('w-1/2');
+        $fields->name('date_field')->html('text')->group('w-1/2');
+        $fields->name('start_date')->html('date')->group('w-1/2');
+        $fields->name('end_date')->html('date')->group('w-1/2');
+        $fields->name('published')->html('switch')->group('w-1/2');
 
         return $fields;
 
@@ -96,11 +96,11 @@ class Autoresponder extends BaseModel
         // listing view fields
         $fields = new FormBuilder();
 
-        $fields->name('subject')->type('text')->group('w-1/6');
-        $fields->name('wait_period')->type('text')->group('w-1/6');
-        $fields->name('start_date')->type('date')->group('w-1/6');
-        $fields->name('end_date')->type('date')->group('w-1/6');
-        $fields->name('published')->type('switch')->group('w-1/6');
+        $fields->name('subject')->html('text')->group('w-1/6');
+        $fields->name('wait_period')->html('text')->group('w-1/6');
+        $fields->name('start_date')->html('date')->group('w-1/6');
+        $fields->name('end_date')->html('date')->group('w-1/6');
+        $fields->name('published')->html('switch')->group('w-1/6');
 
         return $fields;
 
@@ -113,16 +113,16 @@ class Autoresponder extends BaseModel
      */
     public function migration(Blueprint $table): void
     {
-        $table->increments('id');
-        $table->string('name');
-        $table->string('subject');
-        $table->string('body');
-        $table->integer('wait_period');
-        $table->char('table_name', 255);
-        $table->char('email_field', 255);
-        $table->char('date_field', 255);
-        $table->datetime('start_date');
-        $table->datetime('end_date');
-        $table->tinyInteger('published')->default(true);
+        $this->fields->increments('id');
+        $this->fields->string('name');
+        $this->fields->string('subject');
+        $this->fields->string('body');
+        $this->fields->integer('wait_period');
+        $this->fields->char('table_name', 255);
+        $this->fields->char('email_field', 255);
+        $this->fields->char('date_field', 255);
+        $this->fields->datetime('start_date');
+        $this->fields->datetime('end_date');
+        $this->fields->tinyInteger('published')->default(true);
     }
 }

@@ -47,9 +47,9 @@ class Group extends BaseModel
         // listing view fields
         $fields = new ListTable();
 
-        $fields->name('name')->type('text')->ordering(true);
-        $fields->name('ordering')->type('text')->ordering(true);
-        $fields->name('published')->type('switch')->ordering(true);
+        $fields->name('name')->html('text')->ordering(true);
+        $fields->name('ordering')->html('text')->ordering(true);
+        $fields->name('published')->html('switch')->ordering(true);
 
         return $fields;
 
@@ -65,10 +65,10 @@ class Group extends BaseModel
         // listing view fields
         $fields = new FormBuilder();
 
-        $fields->name('name')->type('text')->group('w-1/2');
-        $fields->name('description')->type('text')->group('w-1/2');
-        $fields->name('ordering')->type('text')->group('w-1/2');
-        $fields->name('published')->type('switch')->group('w-1/2');
+        $fields->name('name')->html('text')->group('w-1/2');
+        $fields->name('description')->html('text')->group('w-1/2');
+        $fields->name('ordering')->html('text')->group('w-1/2');
+        $fields->name('published')->html('switch')->group('w-1/2');
 
         return $fields;
 
@@ -84,9 +84,9 @@ class Group extends BaseModel
         // listing view fields
         $fields = new FormBuilder();
 
-        $fields->name('name')->type('text')->group('w-1/6');
-        $fields->name('ordering')->type('text')->group('w-1/6');
-        $fields->name('published')->type('switch')->group('w-1/6');
+        $fields->name('name')->html('text')->group('w-1/6');
+        $fields->name('ordering')->html('text')->group('w-1/6');
+        $fields->name('published')->html('switch')->group('w-1/6');
 
         return $fields;
 
@@ -99,10 +99,10 @@ class Group extends BaseModel
      */
     public function migration(Blueprint $table): void
     {
-        $table->increments('id');
-        $table->char('name', 255);
-        $table->string('description');
-        $table->integer('ordering');
-        $table->tinyInteger('published')->default(true);
+        $this->fields->increments('id');
+        $this->fields->char('name', 255);
+        $this->fields->string('description');
+        $this->fields->integer('ordering');
+        $this->fields->tinyInteger('published')->default(true);
     }
 }
