@@ -41,15 +41,28 @@ class Campaign extends BaseModel
      * @param Blueprint $table
      * @return void
      */
-    public function fields(Blueprint $table): void
+    public function fields(Blueprint $table = null): void
     {
         $this->fields = $table ?? new Blueprint($this->table);
-        
+
         $this->fields->increments('id')->html('text');
         $this->fields->string('subject')->html('text');
         $this->fields->string('body')->html('textarea');
         $this->fields->datetime('send_date')->html('date');
         $this->fields->tinyInteger('is_sent')->nullable()->default(0)->html('switch');
         $this->fields->tinyInteger('published')->nullable()->default(1)->html('switch');
+    }
+
+    /**
+     * List of structure for this model.
+     */
+    public function structure($structure): array
+    {
+        $structure = [
+            'table' => ['subject', 'send_date', 'is_sent', 'published'],
+            'filter' => ['subject', 'send_date', 'is_sent', 'published'],
+        ];
+
+        return $structure;
     }
 }
