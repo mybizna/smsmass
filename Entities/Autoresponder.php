@@ -64,8 +64,15 @@ class Autoresponder extends BaseModel
      */
     public function structure($structure): array
     {
+
         $structure = [
             'table' => ['subject', 'wait_period', 'table_name', 'email_field', 'date_field', 'start_date', 'end_date', 'published'],
+            'form' => [
+                ['label' => 'Subject', 'class' => 'w-full', 'fields' => ['subject']],
+                ['label' => 'Body', 'class' => 'w-full', 'fields' => ['body']],
+                ['label' => 'Body', 'class' => 'w-1/2', 'fields' => ['wait_period', 'table_name', 'email_field', 'date_field']],
+                ['label' => 'Body', 'class' => 'w-1/2', 'fields' => ['start_date', 'end_date', 'published']],
+            ],
             'filter' => ['subject', 'table_name'],
         ];
 
