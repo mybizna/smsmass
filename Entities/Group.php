@@ -57,16 +57,13 @@ class Group extends BaseModel
      */
     public function structure($structure): array
     {
-        $structure = [
-            'table' => ['name', 'ordering', 'published'],
-            'form' => [
-                
-                ['label' => 'Name', 'class' => 'w-full', 'fields' => ['name']],
-                ['label' => 'Published', 'class' => 'w-1/2', 'fields' => ['ordering','published']],
-                ['label' => 'Description', 'class' => 'w-full', 'fields' => ['description']],
-            ],
-            'filter' => ['name', 'published'],
+        $structure['table'] = ['name', 'ordering', 'published'];
+        $structure['form'] = [
+            ['label' => 'Name', 'class' => 'col-span-full', 'fields' => ['name']],
+            ['label' => 'Published', 'class' => 'col-span-6', 'fields' => ['ordering', 'published']],
+            ['label' => 'Description', 'class' => 'col-span-full', 'fields' => ['description']],
         ];
+        $structure['filter'] = ['name', 'published'];
 
         return $structure;
     }
