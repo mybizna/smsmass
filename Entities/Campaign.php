@@ -60,9 +60,9 @@ class Campaign extends BaseModel
     {
         $structure['table'] = ['subject', 'send_date', 'is_sent', 'published'];
         $structure['form'] = [
-            ['label' => 'Subject', 'class' => 'col-span-full', 'fields' => ['subject']],
-            ['label' => 'Body', 'class' => 'col-span-full', 'fields' => ['body']],
-            ['label' => 'Body', 'class' => 'col-span-full  md:col-span-6 md:pr-2', 'fields' => ['send_date', 'is_sent', 'published']],
+            ['label' => 'Campaign Subject', 'class' => 'col-span-full', 'fields' => ['subject']],
+            ['label' => 'Campaign Body', 'class' => 'col-span-full', 'fields' => ['body']],
+            ['label' => 'Campaign Other Setting', 'class' => 'col-span-full  md:col-span-6 md:pr-2', 'fields' => ['send_date', 'is_sent', 'published']],
         ];
         $structure['filter'] = ['subject', 'send_date', 'is_sent', 'published'];
 

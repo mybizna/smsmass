@@ -59,9 +59,9 @@ class Group extends BaseModel
     {
         $structure['table'] = ['name', 'ordering', 'published'];
         $structure['form'] = [
-            ['label' => 'Name', 'class' => 'col-span-full', 'fields' => ['name']],
-            ['label' => 'Published', 'class' => 'col-span-full  md:col-span-6 md:pr-2', 'fields' => ['ordering', 'published']],
-            ['label' => 'Description', 'class' => 'col-span-full', 'fields' => ['description']],
+            ['label' => 'Group Name', 'class' => 'col-span-full', 'fields' => ['name']],
+            ['label' => 'Group Published', 'class' => 'col-span-full  md:col-span-6 md:pr-2', 'fields' => ['ordering', 'published']],
+            ['label' => 'Group Description', 'class' => 'col-span-full', 'fields' => ['description']],
         ];
         $structure['filter'] = ['name', 'published'];
 
