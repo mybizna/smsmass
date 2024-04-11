@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "mybizna/sms": ">=24.02.002"
+    "mybizna/sms": "^24.2"
   },
   "extra": {
     "laravel": {
