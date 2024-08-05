@@ -13,7 +13,18 @@ return new class extends Migration
     {
         Schema::create('smsmass_autoresponder', function (Blueprint $table) {
             $table->id();
-            
+
+            $table->string('name');
+            $table->string('subject');
+            $table->text('body');
+            $table->integer('wait_period');
+            $table->string('table_name', 255);
+            $table->string('email_field', 255);
+            $table->string('date_field', 255);
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
+            $table->tinyInteger('published')->default(true);
+
             $table->timestamps();
         });
     }

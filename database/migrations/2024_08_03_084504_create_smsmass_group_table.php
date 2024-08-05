@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('smsmass_group', function (Blueprint $table) {
             $table->id();
-            
+
+            $table->string('name');
+            $table->string('description');
+            $table->integer('ordering')->default(10);
+            $table->tinyInteger('published')->default(true);
+
             $table->timestamps();
         });
     }
