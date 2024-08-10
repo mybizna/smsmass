@@ -1,8 +1,8 @@
 <?php
 
-namespace Modules\Smsmass\Entities;
+namespace Modules\Smsmass\Models;
 
-use Modules\Base\Entities\BaseModel;
+use Modules\Base\Models\BaseModel;
 
 class Campaign extends BaseModel
 {
