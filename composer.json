@@ -29,4 +29,16 @@
       "Modules\\Smsmass\\": ""
     }
   }
+  "autoload": {
+    "psr-4": {
+      "Modules\\Smsmass\\": "app/",
+      "Modules\\Smsmass\\Database\\Factories\\": "database/factories/",
+      "Modules\\Smsmass\\Database\\Seeders\\": "database/seeders/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Modules\\Smsmass\\Tests\\": "tests/"
+    }
+  }
 }
