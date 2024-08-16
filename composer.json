@@ -1,0 +1,39 @@
+{
+    "name": "mybizna/smsmass",
+    "description": "",
+    "type": "asgard-module",
+    "version": "2024.5",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Mybizna",
+            "homepage": "https://mybizna.com",
+            "email": "info@mybizna.com"
+        },
+        {
+            "name": "Dedan Irungu",
+            "email": "dedanirungu@gmail.com"
+        }
+    ],
+    "require": {
+        "mybizna/partner": "^24.2"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Smsmass\\": "app/",
+            "Modules\\Smsmass\\Database\\Factories\\": "database/factories/",
+            "Modules\\Smsmass\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Smsmass\\Tests\\": "tests/"
+        }
+    }
+}
