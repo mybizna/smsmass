@@ -2,9 +2,6 @@
 
 namespace Modules\Smsmass\Filament\Resources;
 
-use Modules\Smsmass\Filament\Resources\GroupResource\Pages;
-use Modules\Smsmass\Filament\Resources\GroupResource\RelationManagers;
-use Modules\Smsmass\Models\Group;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,10 +9,16 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Modules\Smsmass\Filament\Resources\GroupResource\Pages;
+use Modules\Smsmass\Models\Group;
 
 class GroupResource extends Resource
 {
     protected static ?string $model = Group::class;
+
+    protected static ?string $slug = 'smsmass/blacklist';
+
+    protected static ?string $navigationGroup = 'SMS';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
