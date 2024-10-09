@@ -4,15 +4,12 @@ namespace Modules\Smsmass\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Modules\Smsmass\Filament\Resources\AutoresponderResource\Pages;
+use Modules\Base\Filament\Resources\BaseResource;
 use Modules\Smsmass\Models\Autoresponder;
 
-class AutoresponderResource extends Resource
+class AutoresponderResource extends BaseResource
 {
     protected static ?string $model = Autoresponder::class;
 
@@ -109,27 +106,4 @@ class AutoresponderResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => Pages\ListAutoresponders::route('/'),
-            'create' => Pages\CreateAutoresponder::route('/create'),
-            'edit' => Pages\EditAutoresponder::route('/{record}/edit'),
-        ];
-    }
-
-    public static function getEloquentQuery(): Builder
-    {
-        return parent::getEloquentQuery()
-            ->withoutGlobalScopes([
-                SoftDeletingScope::class,
-            ]);
-    }
 }
